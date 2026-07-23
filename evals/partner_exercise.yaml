@@ -1,0 +1,11 @@
+skills:
+  include:
+    - "../plugins/cortex-code-eval/skills/cortex-eval"
+
+datasets: ["partner_exercise"]
+
+agent:
+  model: "claude-sonnet-4-5"
+
+n_attempts: 1
+n_concurrent: 3
