@@ -8,6 +8,10 @@
 A regional-revenue query works but is hard to maintain (correlated subquery inside a
 wrapper). Clean it up and ship it as a view — same numbers, better code.
 
+## Why this is valuable to a partner
+Shows Cortex Code improving code quality **without regressions** — a core maintenance
+task, and exactly what a coding agent (vs. autocomplete) is good at.
+
 ## Setup (once)
 **[Snowsight]** Run the repo's [`setup.sql`](../setup.sql) if you haven't already.
 
@@ -27,7 +31,3 @@ expected 3 rows and prints `PASS`/`FAIL`:
 | West   | 36500.00 |
 | East   | 47500.00 |
 | North  | 63000.00 |
-
-## Why this is valuable to a partner
-Shows Cortex Code improving code quality **without regressions** — a core maintenance
-task, and exactly what a coding agent (vs. autocomplete) is good at.

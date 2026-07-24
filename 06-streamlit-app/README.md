@@ -7,6 +7,10 @@
 ## Business scenario
 A product manager wants a simple internal sales dashboard.
 
+## Why this is valuable to a partner
+Shows Cortex Code scaffolding a working **Streamlit + Snowflake app** — a common way
+partners build internal data tools.
+
 ## Setup
 None to verify. The structural check runs locally with Python 3 — no Snowflake needed.
 (Optionally deploy the result as a Streamlit-in-Snowflake app to see it live against the
@@ -31,7 +35,3 @@ python verify.py app.py
 
 It confirms the app compiles and contains the required pieces (imports Streamlit, uses a
 Snowflake session, has a title, an interactive filter, and a data display). Prints `PASS`/`FAIL`.
-
-## Why this is valuable to a partner
-Shows Cortex Code scaffolding a working **Streamlit + Snowflake app** — a common way
-partners build internal data tools.

@@ -8,6 +8,10 @@
 Analysts keep re-writing the same per-customer revenue rollup. Give them a single
 reusable model so every report reads from one consistent source.
 
+## Why this is valuable to a partner
+Shows Cortex Code producing a **reusable data artifact** (not a one-off answer) — the
+foundational analytics-engineering task in a Snowflake development workflow.
+
 ## Setup (once)
 **[Snowsight]** Run the repo's [`setup.sql`](../setup.sql) in a Snowsight worksheet, in a schema where you
 can create tables. It seeds `CUSTOMERS` (6) and `ORDERS` (10) in your current schema.
@@ -33,7 +37,3 @@ the view's output to the expected result and prints `PASS`/`FAIL`. Expected:
 | Umbrella Co   | North  | 63000.00      | 2 |
 | Hooli         | East   | 18000.00      | 2 |
 | Pied Piper    | West   |  9800.00      | 1 |
-
-## Why this is valuable to a partner
-Shows Cortex Code producing a **reusable data artifact** (not a one-off answer) — the
-foundational analytics-engineering task in a Snowflake development workflow.

@@ -8,6 +8,10 @@
 Your data-loading scripts hand-write Snowflake `MERGE` (upsert) statements and keep
 making typos. Build a small helper that generates them consistently.
 
+## Why this is valuable to a partner
+Shows Cortex Code generating **working, verifiable Python** from a spec — code an agent
+can be trusted to produce because it's checked objectively, not eyeballed.
+
 ## Setup
 None. This runs locally with Python 3 — no Snowflake connection needed.
 
@@ -34,7 +38,3 @@ python verify.py merge_helper.py
 
 It calls `build_merge("TARGET_T","SOURCE_S",["id"],["name","amount"])` and confirms the
 generated statement contains the required clauses. Prints `PASS`/`FAIL`.
-
-## Why this is valuable to a partner
-Shows Cortex Code generating **working, verifiable Python** from a spec — code an agent
-can be trusted to produce because it's checked objectively, not eyeballed.

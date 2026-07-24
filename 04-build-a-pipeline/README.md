@@ -10,6 +10,11 @@ Instead of one big monolithic query, build the monthly revenue report as a prope
 aggregates on top of it. This is how analytics-engineering teams keep transformations
 modular and reusable.
 
+## Why this is valuable to a partner
+This is the core analytics-engineering pattern (à la dbt): the agent composes **dependent
+models** and reasons about layering — not just a single query. The verify even confirms the
+dependency, so it demonstrates Cortex Code built a *pipeline*, not just an answer.
+
 ## Setup (once)
 **[Snowsight]** Run the repo's [`setup.sql`](../setup.sql) if you haven't already.
 
@@ -27,8 +32,3 @@ modular and reusable.
 - `MART_MONTHLY_REVENUE` returns 8 rows with total revenue of 147,000,
 - the mart's definition actually **reads from the staging view** (via `GET_DDL`) — proving
   it's a real pipeline, not two disconnected queries.
-
-## Why this is valuable to a partner
-This is the core analytics-engineering pattern (à la dbt): the agent composes **dependent
-models** and reasons about layering — not just a single query. The verify even confirms the
-dependency, so it demonstrates Cortex Code built a *pipeline*, not just an answer.

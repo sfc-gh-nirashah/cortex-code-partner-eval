@@ -9,6 +9,11 @@ The regional revenue report shows the **North** region's revenue as **doubled**.
 "looks fine," so the bug isn't obvious from the SQL alone — you have to look at the actual
 data to find the root cause.
 
+## Why this is valuable to a partner
+This shows Cortex Code's **unique edge**: it's connected to your warehouse and can
+**investigate the actual data** to diagnose a problem — a fan-out from a duplicate lookup row —
+that no static code reading or text-to-SQL tool would catch. Real debugging, not pattern-matching.
+
 ## Setup (once)
 1. **[Snowsight]** Run the repo's [`setup.sql`](../setup.sql) if you haven't already.
 2. **[Snowsight]** Run this exercise's [`setup_08.sql`](setup_08.sql) — it adds a `CUSTOMER_REGION_LOOKUP`
@@ -33,8 +38,3 @@ and prints `PASS`/`FAIL`:
 | West   | 36500.00 |
 | East   | 47500.00 |
 | North  | 63000.00 |
-
-## Why this is valuable to a partner
-This shows Cortex Code's **unique edge**: it's connected to your warehouse and can
-**investigate the actual data** to diagnose a problem — a fan-out from a duplicate lookup row —
-that no static code reading or text-to-SQL tool would catch. Real debugging, not pattern-matching.

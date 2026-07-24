@@ -9,6 +9,12 @@ iterate until green. **This is the flagship exercise.**
 You've inherited a small `salespipe` Python package that transforms and reports on sales
 data. Several functions aren't implemented yet, so its test suite is failing. Get it green.
 
+## Why this is valuable to a partner
+This is what a coding **agent** does that autocomplete and query tools can't: understand a
+small codebase, implement across **multiple files** with a real dependency between them, and
+**run the tests to confirm** — the build → run → fix loop at the heart of developer
+productivity.
+
 ## Setup
 None beyond Python 3. No Snowflake needed. The starter project is in [`starter/`](starter/):
 
@@ -40,9 +46,3 @@ python verify.py
 
 (or, inside `starter/`: `python -m unittest discover -s tests`). It runs the suite and prints
 `PASS` when every test is green.
-
-## Why this is valuable to a partner
-This is what a coding **agent** does that autocomplete and query tools can't: understand a
-small codebase, implement across **multiple files** with a real dependency between them, and
-**run the tests to confirm** — the build → run → fix loop at the heart of developer
-productivity.
