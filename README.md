@@ -6,12 +6,12 @@ pipelines, writing code, debugging, and shipping an app. Each exercise is a busi
 scenario, a prompt you give to Cortex Code, and a self-contained way to verify the result.
 
 These are **development-phase** tasks (what a Snowflake app/data developer does), not
-"answer-a-business-question" data queries. Every exercise is verified the way ADE-bench
-verifies work — **run the artifact and compare it to an expected result** — but with **no
-framework**: just a `verify.sql` or `verify.py`.
+"answer-a-business-question" data queries. Every exercise is verified simply —
+**run the artifact and compare it to an expected result** — with **no special framework**:
+just a `verify.sql` or `verify.py`.
 
 **You only need:** Cortex Code (always); a Snowflake worksheet (SQL exercises); Python 3
-(code exercises). No Harbor, no Docker.
+(code exercises). No special framework or containers required.
 
 ---
 
@@ -21,7 +21,7 @@ Pick based on how much time you have and how deep you want to go — simple comb
 
 | Path | Best for | Exercises | Approx. time |
 |------|----------|-----------|--------------|
-| **Quick taste** (closest to "a couple of prompts") | A first look | 1, 2 | ~20 min |
+| **Quick taste** | A first look (2 prompts) | 1, 2 | ~20 min |
 | **Developer combo** | See the everyday range | 1 – 6 | ~1.5 hrs |
 | **Full agent showcase** | See real SDLC power | 1 – 8 | ~2.5 hrs |
 
