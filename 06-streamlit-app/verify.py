@@ -2,7 +2,7 @@
 """Structural check for the Streamlit + Snowflake app. No Snowflake needed.
 
 Usage:
-    python verify.py [path/to/app.py]      # defaults to app.py in the cwd
+    python verify.py [path/to/app.py]      # defaults to app.py
 
 Prints PASS or FAIL and exits 0 (pass) or 1 (fail). Standard library only.
 """
@@ -36,6 +36,9 @@ def main() -> None:
             "get_active_session" in src or "snowflake" in src.lower()
         ),
         "has a title": "st.title" in src or "st.header" in src,
+        "has an interactive filter": any(
+            w in src for w in ("st.selectbox", "st.multiselect", "st.radio", "st.slider")
+        ),
         "displays data": any(
             call in src
             for call in (

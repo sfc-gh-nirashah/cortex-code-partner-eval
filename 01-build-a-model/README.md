@@ -1,0 +1,36 @@
+# Exercise 01 — Build a data model
+
+**SDLC action:** build a reusable analytics artifact.
+
+## Business scenario
+Analysts keep re-writing the same per-customer revenue rollup. Give them a single
+reusable model so every report reads from one consistent source.
+
+## Setup (once)
+Run the repo's [`setup.sql`](../setup.sql) in a Snowsight worksheet. It creates
+`CORTEX_PARTNER_DEMO.SALES` with seeded `CUSTOMERS` (6) and `ORDERS` (10).
+
+## Prompt (paste into Cortex Code)
+
+> In `CORTEX_PARTNER_DEMO.SALES`, create a reusable view named **`CUSTOMER_REVENUE`**
+> with one row per customer and these exact columns:
+> `customer_name`, `region`, `total_revenue` (sum of the customer's order amounts),
+> and `order_count` (number of the customer's orders).
+> Create the view in that schema.
+
+## How to verify
+After the view exists, run [`verify.sql`](verify.sql) in your worksheet — it compares
+the view's output to the expected result and prints `PASS`/`FAIL`. Expected:
+
+| customer_name | region | total_revenue | order_count |
+|---------------|--------|---------------|-------------|
+| Acme Corp     | West   | 23500.00      | 2 |
+| Globex Ltd    | East   | 29500.00      | 2 |
+| Initech       | West   |  3200.00      | 1 |
+| Umbrella Co   | North  | 63000.00      | 2 |
+| Hooli         | East   | 18000.00      | 2 |
+| Pied Piper    | West   |  9800.00      | 1 |
+
+## Why this is valuable to a partner
+Shows Cortex Code producing a **reusable data artifact** (not a one-off answer) — the
+foundational analytics-engineering task in a Snowflake development workflow.

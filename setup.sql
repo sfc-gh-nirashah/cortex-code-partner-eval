@@ -1,5 +1,5 @@
--- One-time setup for the Cortex Code SQL exercises.
--- Run in a Snowsight worksheet, or:  snow sql -c <your_connection> -f setup.sql
+-- Shared one-time setup for the SQL exercises (01-04).
+-- Run once in a Snowsight worksheet, or:  snow sql -c <connection> -f setup.sql
 
 CREATE DATABASE IF NOT EXISTS CORTEX_PARTNER_DEMO;
 CREATE SCHEMA   IF NOT EXISTS CORTEX_PARTNER_DEMO.SALES;
