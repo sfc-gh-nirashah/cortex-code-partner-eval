@@ -1,9 +1,11 @@
--- Shared one-time setup for the SQL exercises (01-04).
--- Run once in a Snowsight worksheet, or:  snow sql -c <connection> -f setup.sql
-
-CREATE DATABASE IF NOT EXISTS CORTEX_PARTNER_DEMO;
-CREATE SCHEMA   IF NOT EXISTS CORTEX_PARTNER_DEMO.SALES;
-USE SCHEMA CORTEX_PARTNER_DEMO.SALES;
+-- One-time setup for the SQL exercises (01-04; exercise 08 also runs setup_08.sql).
+--
+-- No CREATE DATABASE needed. FIRST pick a database + schema you can create tables
+-- in — either set it in the Snowsight worksheet context (top-right), or edit and
+-- run this line:
+--     USE SCHEMA <your_database>.<your_schema>;
+--
+-- Then run this whole script. It creates the demo tables in your CURRENT schema.
 
 CREATE OR REPLACE TABLE CUSTOMERS (
     customer_id   INT,
@@ -36,4 +38,5 @@ INSERT INTO ORDERS VALUES
     (9,  4, '2024-02-28', 18000.00),
     (10, 5, '2024-03-20',  6000.00);
 
-SELECT 'Setup complete: CORTEX_PARTNER_DEMO.SALES (CUSTOMERS=6, ORDERS=10)' AS status;
+SELECT 'Setup complete in ' || CURRENT_DATABASE() || '.' || CURRENT_SCHEMA()
+       || ' (CUSTOMERS=6, ORDERS=10)' AS status;

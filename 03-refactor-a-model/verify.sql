@@ -1,7 +1,5 @@
--- Auto-check for Exercise 03. Run after the agent has created the
--- REGION_REVENUE view. Prints PASS or FAIL.
-
-USE SCHEMA CORTEX_PARTNER_DEMO.SALES;
+-- Auto-check for Exercise 03. Run in the SAME schema as setup.sql, after the
+-- agent has created the REGION_REVENUE view. Prints PASS or FAIL.
 
 WITH got AS (
     SELECT region, CAST(total_revenue AS NUMBER(38,2)) AS total_revenue

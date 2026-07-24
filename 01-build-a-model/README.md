@@ -7,13 +7,13 @@ Analysts keep re-writing the same per-customer revenue rollup. Give them a singl
 reusable model so every report reads from one consistent source.
 
 ## Setup (once)
-Run the repo's [`setup.sql`](../setup.sql) in a Snowsight worksheet. It creates
-`CORTEX_PARTNER_DEMO.SALES` with seeded `CUSTOMERS` (6) and `ORDERS` (10).
+Run the repo's [`setup.sql`](../setup.sql) in a Snowsight worksheet, in a schema where you
+can create tables. It seeds `CUSTOMERS` (6) and `ORDERS` (10) in your current schema.
 
 ## Prompt (paste into Cortex Code)
 
 > Our reports keep re-deriving per-customer revenue from the raw `CUSTOMERS` and
-> `ORDERS` tables in `CORTEX_PARTNER_DEMO.SALES`, and the numbers drift. Create one
+> `ORDERS` tables (in the current schema), and the numbers drift. Create one
 > reusable view, **`CUSTOMER_REVENUE`**, that reports each customer's total revenue,
 > how many orders they've placed, and their region — so every report can read from a
 > single source. Include the columns `customer_name`, `region`, `total_revenue`, and

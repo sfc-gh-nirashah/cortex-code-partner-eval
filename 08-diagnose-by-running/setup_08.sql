@@ -1,8 +1,6 @@
--- Extra setup for Exercise 08. Run AFTER the repo's setup.sql.
+-- Extra setup for Exercise 08. Run AFTER setup.sql, in the SAME schema.
 -- Creates a region lookup table with a DUPLICATE row for one customer,
 -- which causes a fan-out join and doubled revenue in the starter query.
-
-USE SCHEMA CORTEX_PARTNER_DEMO.SALES;
 
 CREATE OR REPLACE TABLE CUSTOMER_REGION_LOOKUP (customer_id INT, region STRING);
 INSERT INTO CUSTOMER_REGION_LOOKUP VALUES

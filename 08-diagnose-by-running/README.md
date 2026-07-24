@@ -14,8 +14,8 @@ data to find the root cause.
 
 ## Prompt (paste into Cortex Code, with the contents of `starter/revenue_by_region.sql`)
 
-> The query in `revenue_by_region.sql` reports total revenue per region using
-> `CORTEX_PARTNER_DEMO.SALES`, but the North total is coming out doubled. The SQL looks
+> The query in `revenue_by_region.sql` reports total revenue per region from tables
+> in the current schema, but the North total is coming out doubled. The SQL looks
 > correct. Investigate the underlying data to find the root cause, then produce a corrected
 > result as a view named **`REGION_REVENUE_FIXED`** with the right per-region totals.
 

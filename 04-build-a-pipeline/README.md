@@ -13,7 +13,7 @@ Run the repo's [`setup.sql`](../setup.sql) if you haven't already.
 
 ## Prompt (paste into Cortex Code)
 
-> In `CORTEX_PARTNER_DEMO.SALES`, build a two-layer pipeline of views:
+> In the current schema, build a two-layer pipeline of views:
 > 1. **`STG_CUSTOMER_ORDERS`** — one row per order, enriched with the order's
 >    `customer_name` and `region` (from `CUSTOMERS`).
 > 2. **`MART_MONTHLY_REVENUE`** — monthly `total_revenue` and `order_count` by region.

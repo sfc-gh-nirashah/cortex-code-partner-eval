@@ -10,8 +10,8 @@ These are **development-phase** tasks (what a Snowflake app/data developer does)
 **run the artifact and compare it to an expected result** — with **no special framework**:
 just a `verify.sql` or `verify.py`.
 
-**You only need:** Cortex Code (always); a Snowflake worksheet (SQL exercises); Python 3
-(code exercises). No special framework or containers required.
+**You only need:** Cortex Code (always); a Snowflake worksheet where you can create tables/views
+in some schema (SQL exercises); Python 3 (code exercises). No special framework or containers required.
 
 ---
 
@@ -49,9 +49,10 @@ Ordered simple → complex. The **Prompt** column is the gist — the full promp
 
 ## How to use
 
-1. **Once:** run [`setup.sql`](setup.sql) in a Snowsight worksheet — it creates
-   `CORTEX_PARTNER_DEMO.SALES` with a small seeded dataset (used by the SQL exercises).
-   *(Exercise 8 also needs its own `setup_08.sql`.)*
+1. **Once:** pick a database + schema you can create tables in (set it in the Snowsight
+   worksheet context, or `USE SCHEMA <your_db>.<your_schema>;`), then run [`setup.sql`](setup.sql).
+   It seeds `CUSTOMERS` and `ORDERS` in that schema (used by the SQL exercises). No
+   `CREATE DATABASE` needed. *(Exercise 8 also runs `setup_08.sql` in the same schema.)*
 2. Open an exercise folder's `README.md`.
 3. Paste its **Prompt** into Cortex Code and let it work.
 4. **Verify:**
@@ -62,6 +63,16 @@ That's the whole loop: **scenario → prompt → run the artifact → verify.**
 
 ## Cleanup
 
+Drop the demo objects from the schema you used:
+
 ```sql
-DROP DATABASE IF EXISTS CORTEX_PARTNER_DEMO;
+DROP VIEW IF EXISTS CUSTOMER_REVENUE;
+DROP VIEW IF EXISTS MONTHLY_REGION_REVENUE;
+DROP VIEW IF EXISTS REGION_REVENUE;
+DROP VIEW IF EXISTS STG_CUSTOMER_ORDERS;
+DROP VIEW IF EXISTS MART_MONTHLY_REVENUE;
+DROP VIEW IF EXISTS REGION_REVENUE_FIXED;
+DROP TABLE IF EXISTS CUSTOMER_REGION_LOOKUP;
+DROP TABLE IF EXISTS CUSTOMERS;
+DROP TABLE IF EXISTS ORDERS;
 ```

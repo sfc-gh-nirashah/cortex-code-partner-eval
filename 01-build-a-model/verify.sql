@@ -1,7 +1,5 @@
--- Auto-check for Exercise 01. Run in a Snowsight worksheet after the agent
--- has created the CUSTOMER_REVENUE view. Prints PASS or FAIL.
-
-USE SCHEMA CORTEX_PARTNER_DEMO.SALES;
+-- Auto-check for Exercise 01. Run in the SAME schema as setup.sql, after the
+-- agent has created the CUSTOMER_REVENUE view. Prints PASS or FAIL.
 
 WITH got AS (
     SELECT customer_name,

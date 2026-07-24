@@ -1,7 +1,6 @@
--- Auto-check for Exercise 04. Run after the agent has created both views.
--- Verifies correctness AND that the mart depends on the staging view.
-
-USE SCHEMA CORTEX_PARTNER_DEMO.SALES;
+-- Auto-check for Exercise 04. Run in the SAME schema as setup.sql, after the
+-- agent has created both views. Verifies correctness AND that the mart depends
+-- on the staging view.
 
 SELECT CASE
     WHEN (SELECT COUNT(*) FROM STG_CUSTOMER_ORDERS) = 10

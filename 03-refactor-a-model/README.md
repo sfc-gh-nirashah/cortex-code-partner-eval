@@ -12,8 +12,8 @@ Run the repo's [`setup.sql`](../setup.sql) if you haven't already.
 ## Prompt (paste into Cortex Code, with the contents of `starter/messy_model.sql`)
 
 > The query in `messy_model.sql` returns total revenue per region from tables in
-> `CORTEX_PARTNER_DEMO.SALES`. Refactor it into clean, readable SQL (a simple join +
-> aggregation) and expose it as a view named **`REGION_REVENUE`** in that schema.
+> the current schema. Refactor it into clean, readable SQL (a simple join +
+> aggregation) and expose it as a view named **`REGION_REVENUE`** in the same schema.
 > The output must be identical to the original.
 
 ## How to verify
