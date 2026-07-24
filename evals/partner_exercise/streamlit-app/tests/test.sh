@@ -1,14 +1,7 @@
 #!/bin/bash
 
-# Structural verifier for the Streamlit + Snowflake app exercise.
-#
-# Pattern: fix-syntax-errors (runs python, checks exit code) +
-#          humanize-numbers (content grep assertions).
-#
-# Full runtime browser-based validation is available via SnovaVerifier
-# (snova_verifier.py:130-153, Validation.streamlit) but requires
-# ai_browser infrastructure. This structural check is the supported
-# deterministic pattern present in the shipped examples.
+# Structural verifier: the app must compile and contain the required pieces.
+# Same shape as the shipped simple_tests verifiers (compile + grep -> reward.txt).
 
 APP=/workspace/app.py
 

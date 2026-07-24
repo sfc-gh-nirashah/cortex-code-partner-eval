@@ -12,7 +12,6 @@ timeout_sec = 600
 
 [verifier]
 timeout_sec = 300
-include_dirs = ["../_shared/tests"]
 
 [environment]
 use_scratch = true
