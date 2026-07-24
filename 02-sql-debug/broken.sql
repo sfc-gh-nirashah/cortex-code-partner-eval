@@ -1,5 +1,5 @@
--- Monthly Sales Report: revenue and order count by region and month
--- NOTE: This query contains bugs. Fix them so it runs correctly.
+-- Monthly Sales Report: revenue and order count by region and month.
+-- This query FAILS to run. Ask Cortex Code to fix it.
 
 SELECT
     DATE_TRUNC('month', order_date)   AS sales_month,

@@ -1,16 +1,6 @@
-# Eval run artifacts
-jobs/
-.generated/
-
 # Python
 __pycache__/
 *.pyc
-.venv/
-venv/
-
-# Env / secrets
-.env
-*.env
 
 # OS / editor
 .DS_Store
