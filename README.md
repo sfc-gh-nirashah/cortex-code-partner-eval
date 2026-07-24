@@ -32,18 +32,18 @@ that best shows Cortex Code working like a developer, not autocomplete.
 
 ## All exercises
 
-Ordered simple → complex.
+Ordered simple → complex. The **Prompt** column is the gist — the full prompt (with exact object names) is in each exercise's `README.md`.
 
-| # | Exercise | What it proves | Complexity | Time | Verify |
-|---|----------|----------------|-----------|------|--------|
-| 1 | [Build a data model](01-build-a-model/) | Generate a reusable artifact from a business need | Easy | ~10 min | `verify.sql` |
-| 2 | [Fix a broken transformation](02-fix-a-transformation/) | Read errors, repair a failing model | Easy | ~10 min | `verify.sql` |
-| 3 | [Refactor a model](03-refactor-a-model/) | Improve code without regressions | Medium | ~15 min | `verify.sql` |
-| 4 | [Build a 2-layer pipeline](04-build-a-pipeline/) | Compose dependent models (staging → mart) | Medium | ~20 min | `verify.sql` |
-| 5 | [Python utility + tests](05-python-merge-helper/) | Generate verifiable code | Medium | ~15 min | `python verify.py` |
-| 6 | [Streamlit app](06-streamlit-app/) | Build an interactive app | Medium | ~20 min | `python verify.py` |
-| 7 | [Make the test suite pass](07-make-tests-pass/) 🚩 | The real agent loop: multi-file changes, run tests, iterate | Hard | ~30 min | `python verify.py` |
-| 8 | [Diagnose by running it](08-diagnose-by-running/) | Investigate live data to find a bug (tool use) | Hard | ~25 min | `verify.sql` |
+| # | Exercise | Prompt | What it proves | Complexity | Time | Verify |
+|---|----------|--------|----------------|-----------|------|--------|
+| 1 | [Build a data model](01-build-a-model/) | *"Reports keep re-deriving per-customer revenue. Create a reusable view `CUSTOMER_REVENUE` (customer_name, region, total_revenue, order_count)."* | Generate a reusable artifact from a business need | Easy | ~10 min | `verify.sql` |
+| 2 | [Fix a broken transformation](02-fix-a-transformation/) | *"`broken_model.sql` powers the monthly report but fails. Fix the bugs and expose it as view `MONTHLY_REGION_REVENUE`."* | Read errors, repair a failing model | Easy | ~10 min | `verify.sql` |
+| 3 | [Refactor a model](03-refactor-a-model/) | *"`messy_model.sql` works but is hard to maintain. Refactor into clean view `REGION_REVENUE` — identical output."* | Improve code without regressions | Medium | ~15 min | `verify.sql` |
+| 4 | [Build a 2-layer pipeline](04-build-a-pipeline/) | *"Build `STG_CUSTOMER_ORDERS` (enriched orders) and `MART_MONTHLY_REVENUE` on top of it — not the raw tables."* | Compose dependent models (staging → mart) | Medium | ~20 min | `verify.sql` |
+| 5 | [Python utility + tests](05-python-merge-helper/) | *"Create `merge_helper.py` with `build_merge(target, source, keys, update_cols)` that returns a parameterized Snowflake MERGE statement."* | Generate verifiable, dependency-free code | Medium | ~15 min | `python verify.py` |
+| 6 | [Streamlit app](06-streamlit-app/) | *"Build `app.py` — a Streamlit sales dashboard using the Snowpark active session, with a region filter and a chart."* | Build an interactive app | Medium | ~20 min | `python verify.py` |
+| 7 | [Make the test suite pass](07-make-tests-pass/) 🚩 | *"The `salespipe` package has a failing test suite. Implement the unfinished functions in `transforms.py` and `report.py` so all tests pass."* | The real agent loop: multi-file changes, run tests, iterate | Hard | ~30 min | `python verify.py` |
+| 8 | [Diagnose by running it](08-diagnose-by-running/) | *"Revenue by region looks wrong — North is doubled. Investigate the data, find the root cause, and fix it as view `REGION_REVENUE_FIXED`."* | Investigate live data to find a bug (tool use) | Hard | ~25 min | `verify.sql` |
 
 ---
 
