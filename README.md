@@ -1,5 +1,7 @@
 # Cortex Code — Partner Exercises
 
+![exercises](https://img.shields.io/badge/exercises-8-2b6cb0) ![setup](https://img.shields.io/badge/setup-self--contained-2f855a) ![framework](https://img.shields.io/badge/framework-none-718096) ![verifiers](https://img.shields.io/badge/verifiers-validated-2f855a)
+
 A set of self-contained exercises for evaluating **Snowflake Cortex Code** across the
 **software/data development lifecycle (SDLC)** — building, fixing, refactoring, composing
 pipelines, writing code, debugging, and shipping an app. Each exercise is a business
@@ -10,8 +12,24 @@ These are **development-phase** tasks (what a Snowflake app/data developer does)
 **run the artifact and compare it to an expected result** — with **no special framework**:
 just a `verify.sql` or `verify.py`.
 
-**You only need:** Cortex Code (always); a Snowflake worksheet where you can create tables/views
-in some schema (SQL exercises); Python 3 (code exercises). No special framework or containers required.
+## How it works
+
+```
+scenario  →  prompt  →  Cortex Code (writes + runs + iterates)  →  artifact  →  verify  →  PASS / FAIL
+```
+
+```
+Easy ─────────────────────────────────────────────────────────▶ Hard
+ 01 build · 02 fix · 03 refactor · 04 pipeline · 05 python · 06 streamlit · 07 tests 🚩 · 08 diagnose
+```
+
+## Prerequisites
+
+- **Cortex Code** — installed and connected to Snowflake (see Snowflake's [Cortex Code docs](https://docs.snowflake.com/en/user-guide/cortex-code/cortex-code)).
+- **A Snowflake worksheet** with a role that can create tables/views in some schema — for the SQL exercises (1–4, 8). No `CREATE DATABASE` needed; any schema you can write to works.
+- **Python 3** — for the code exercises (5, 6, 7). If `python` isn't found, use `python3`.
+
+No special framework or containers required.
 
 ## Where you run things
 
@@ -70,6 +88,36 @@ Ordered simple → complex. The **Prompt** column is the gist — the full promp
    - Code exercises (5, 6, 7): run `python verify.py [file]` → `PASS`/`FAIL`.
 
 That's the whole loop: **scenario → prompt → run the artifact → verify.**
+
+> Each `verify.sql` / `verify.py` shows the expected result inline — that's intentional (it's a check, not a hidden test).
+
+### What a pass looks like
+
+SQL exercises (Snowsight):
+```
+RESULT
+------
+PASS
+```
+Code exercises (terminal):
+```
+PASS: all tests pass
+```
+
+### Track your results
+
+Record PASS/FAIL per exercise in [`SCORECARD.md`](SCORECARD.md). To run all three code
+checks at once (after you've created their files): `bash run-checks.sh`.
+
+## Troubleshooting
+
+| Symptom | Fix |
+|---------|-----|
+| SQL: *object does not exist* / verify fails right away | You're not in the schema where `setup.sql` ran. Set the worksheet's database + schema (or `USE SCHEMA <db>.<schema>;`). |
+| SQL: *no active warehouse* | Select a warehouse in the worksheet (top-right). |
+| Cortex Code didn't create the object | It may have only printed the SQL — copy it into your worksheet and run it. |
+| `python: command not found` | Use `python3` instead of `python`. |
+| Cortex Code can't reach Snowflake | Confirm Cortex Code is signed in / connected to your account. |
 
 ## Cleanup
 
