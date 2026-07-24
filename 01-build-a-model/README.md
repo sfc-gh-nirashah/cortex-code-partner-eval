@@ -2,12 +2,14 @@
 
 **SDLC action:** build a reusable analytics artifact.
 
+**Where you'll work:** **[Snowsight]** for setup + verify · **[Cortex Code]** to build the view.
+
 ## Business scenario
 Analysts keep re-writing the same per-customer revenue rollup. Give them a single
 reusable model so every report reads from one consistent source.
 
 ## Setup (once)
-Run the repo's [`setup.sql`](../setup.sql) in a Snowsight worksheet, in a schema where you
+**[Snowsight]** Run the repo's [`setup.sql`](../setup.sql) in a Snowsight worksheet, in a schema where you
 can create tables. It seeds `CUSTOMERS` (6) and `ORDERS` (10) in your current schema.
 
 ## Prompt (paste into Cortex Code)
@@ -20,7 +22,7 @@ can create tables. It seeds `CUSTOMERS` (6) and `ORDERS` (10) in your current sc
 > `order_count`.
 
 ## How to verify
-After the view exists, run [`verify.sql`](verify.sql) in your worksheet — it compares
+**[Snowsight]** After the view exists, run [`verify.sql`](verify.sql) in your worksheet — it compares
 the view's output to the expected result and prints `PASS`/`FAIL`. Expected:
 
 | customer_name | region | total_revenue | order_count |

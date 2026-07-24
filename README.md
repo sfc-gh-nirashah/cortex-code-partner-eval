@@ -13,6 +13,16 @@ just a `verify.sql` or `verify.py`.
 **You only need:** Cortex Code (always); a Snowflake worksheet where you can create tables/views
 in some schema (SQL exercises); Python 3 (code exercises). No special framework or containers required.
 
+## Where you run things
+
+Each exercise step is tagged with where to run it:
+
+- **[Cortex Code]** — paste the prompt; the agent does the work. Since it's connected to Snowflake, it can create the view/object directly (if it only prints SQL, run that in your worksheet). For the "fix/refactor/diagnose" exercises, give it the `starter/*.sql` file (open it, or paste its contents).
+- **[Snowsight]** — run `setup.sql` (once) and each SQL exercise's `verify.sql`.
+- **[Terminal]** — run `python verify.py` for the code exercises. Cortex Code's built-in terminal works.
+
+*Cortex Code can do all of it end-to-end (it has both SQL and a terminal) — Snowsight and the terminal are just where you'd naturally check results.*
+
 ---
 
 ## Choose a path

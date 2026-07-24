@@ -2,6 +2,8 @@
 
 **SDLC action:** compose dependent models (staging → mart).
 
+**Where you'll work:** **[Snowsight]** for setup + verify · **[Cortex Code]** to build the pipeline.
+
 ## Business scenario
 Instead of one big monolithic query, build the monthly revenue report as a proper
 **2-layer pipeline**: a staging model that enriches raw orders, and a mart model that
@@ -9,7 +11,7 @@ aggregates on top of it. This is how analytics-engineering teams keep transforma
 modular and reusable.
 
 ## Setup (once)
-Run the repo's [`setup.sql`](../setup.sql) if you haven't already.
+**[Snowsight]** Run the repo's [`setup.sql`](../setup.sql) if you haven't already.
 
 ## Prompt (paste into Cortex Code)
 
@@ -20,7 +22,7 @@ Run the repo's [`setup.sql`](../setup.sql) if you haven't already.
 >    It **must be built on top of `STG_CUSTOMER_ORDERS`**, not the raw tables.
 
 ## How to verify
-Run [`verify.sql`](verify.sql). It checks three things and prints `PASS`/`FAIL`:
+**[Snowsight]** Run [`verify.sql`](verify.sql). It checks three things and prints `PASS`/`FAIL`:
 - `STG_CUSTOMER_ORDERS` exists and has 10 rows (one per order),
 - `MART_MONTHLY_REVENUE` returns 8 rows with total revenue of 147,000,
 - the mart's definition actually **reads from the staging view** (via `GET_DDL`) — proving

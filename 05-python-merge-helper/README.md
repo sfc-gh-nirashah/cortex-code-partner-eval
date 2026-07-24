@@ -2,6 +2,8 @@
 
 **SDLC action:** generate correct, tested code.
 
+**Where you'll work:** **[Cortex Code]** to build · **[Terminal]** to verify (Cortex Code's built-in terminal works).
+
 ## Business scenario
 Your data-loading scripts hand-write Snowflake `MERGE` (upsert) statements and keep
 making typos. Build a small helper that generates them consistently.
@@ -24,7 +26,7 @@ None. This runs locally with Python 3 — no Snowflake connection needed.
 > Keep it dependency-free (standard library only).
 
 ## How to verify
-Run the check (standard library only — no Snowflake):
+**[Terminal]** Run the check (standard library only — no Snowflake):
 
 ```bash
 python verify.py merge_helper.py

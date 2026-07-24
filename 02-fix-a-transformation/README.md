@@ -2,12 +2,14 @@
 
 **SDLC action:** debug a failing data model.
 
+**Where you'll work:** **[Snowsight]** for setup + verify · **[Cortex Code]** for the fix (give it `starter/broken_model.sql`).
+
 ## Business scenario
 The transformation behind the monthly sales report is failing, so the report is down.
 Fix it and ship it as a view.
 
 ## Setup (once)
-Run the repo's [`setup.sql`](../setup.sql) if you haven't already.
+**[Snowsight]** Run the repo's [`setup.sql`](../setup.sql) if you haven't already.
 
 ## Prompt (paste into Cortex Code, with the contents of `starter/broken_model.sql`)
 
@@ -20,7 +22,7 @@ The starter has three bugs: a wrong column (`amt`), an ambiguous column (`AVG(am
 and a typo (`order_dat`).
 
 ## How to verify
-Run [`verify.sql`](verify.sql) — it checks the view returns 8 rows and total revenue of
+**[Snowsight]** Run [`verify.sql`](verify.sql) — it checks the view returns 8 rows and total revenue of
 147,000 (monthly revenue by region), and prints `PASS`/`FAIL`.
 
 ## Why this is valuable to a partner

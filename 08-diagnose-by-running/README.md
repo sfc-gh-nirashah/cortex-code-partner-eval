@@ -2,14 +2,16 @@
 
 **SDLC action:** debug by *running and inspecting* — not just reading code.
 
+**Where you'll work:** **[Snowsight]** for setup + verify · **[Cortex Code]** to investigate + fix (give it `starter/revenue_by_region.sql`).
+
 ## Business scenario
 The regional revenue report shows the **North** region's revenue as **doubled**. The query
 "looks fine," so the bug isn't obvious from the SQL alone — you have to look at the actual
 data to find the root cause.
 
 ## Setup (once)
-1. Run the repo's [`setup.sql`](../setup.sql) if you haven't already.
-2. Run this exercise's [`setup_08.sql`](setup_08.sql) — it adds a `CUSTOMER_REGION_LOOKUP`
+1. **[Snowsight]** Run the repo's [`setup.sql`](../setup.sql) if you haven't already.
+2. **[Snowsight]** Run this exercise's [`setup_08.sql`](setup_08.sql) — it adds a `CUSTOMER_REGION_LOOKUP`
    table (which contains the problem).
 
 ## Prompt (paste into Cortex Code, with the contents of `starter/revenue_by_region.sql`)
@@ -23,7 +25,7 @@ The root cause is not visible in the query text — the agent has to query the t
 inspect `CUSTOMER_REGION_LOOKUP`) to discover a duplicate row causing a fan-out join.
 
 ## How to verify
-Run [`verify.sql`](verify.sql). It checks `REGION_REVENUE_FIXED` returns the correct totals
+**[Snowsight]** Run [`verify.sql`](verify.sql). It checks `REGION_REVENUE_FIXED` returns the correct totals
 and prints `PASS`/`FAIL`:
 
 | region | total_revenue |

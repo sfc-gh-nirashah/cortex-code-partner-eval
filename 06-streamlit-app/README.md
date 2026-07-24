@@ -2,6 +2,8 @@
 
 **SDLC action:** build an application.
 
+**Where you'll work:** **[Cortex Code]** to build · **[Terminal]** to verify (Cortex Code's built-in terminal works).
+
 ## Business scenario
 A product manager wants a simple internal sales dashboard.
 
@@ -21,7 +23,7 @@ seeded data.)
 > - Show the data with `st.dataframe()` and add a chart (`st.bar_chart()` or `st.line_chart()`)
 
 ## How to verify
-Run the structural check (standard library only — no Snowflake):
+**[Terminal]** Run the structural check (standard library only — no Snowflake):
 
 ```bash
 python verify.py app.py

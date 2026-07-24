@@ -2,12 +2,14 @@
 
 **SDLC action:** refactor for readability while preserving behavior.
 
+**Where you'll work:** **[Snowsight]** for setup + verify · **[Cortex Code]** for the refactor (give it `starter/messy_model.sql`).
+
 ## Business scenario
 A regional-revenue query works but is hard to maintain (correlated subquery inside a
 wrapper). Clean it up and ship it as a view — same numbers, better code.
 
 ## Setup (once)
-Run the repo's [`setup.sql`](../setup.sql) if you haven't already.
+**[Snowsight]** Run the repo's [`setup.sql`](../setup.sql) if you haven't already.
 
 ## Prompt (paste into Cortex Code, with the contents of `starter/messy_model.sql`)
 
@@ -17,7 +19,7 @@ Run the repo's [`setup.sql`](../setup.sql) if you haven't already.
 > The output must be identical to the original.
 
 ## How to verify
-Run [`verify.sql`](verify.sql) — it checks the refactored view returns exactly the
+**[Snowsight]** Run [`verify.sql`](verify.sql) — it checks the refactored view returns exactly the
 expected 3 rows and prints `PASS`/`FAIL`:
 
 | region | total_revenue |

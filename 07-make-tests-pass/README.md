@@ -3,6 +3,8 @@
 **SDLC action:** the real agent loop — read a project, change multiple files, run tests,
 iterate until green. **This is the flagship exercise.**
 
+**Where you'll work:** **[Cortex Code]** to implement (point it at `starter/`) · **[Terminal]** to verify.
+
 ## Business scenario
 You've inherited a small `salespipe` Python package that transforms and reports on sales
 data. Several functions aren't implemented yet, so its test suite is failing. Get it green.
@@ -30,7 +32,7 @@ The `report` functions depend on `transforms.enrich`, so the work spans multiple
 has to stay consistent.
 
 ## How to verify
-From this exercise folder:
+**[Terminal]** From this exercise folder:
 
 ```bash
 python verify.py
