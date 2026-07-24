@@ -12,11 +12,12 @@ Run the repo's [`setup.sql`](../setup.sql) in a Snowsight worksheet. It creates
 
 ## Prompt (paste into Cortex Code)
 
-> In `CORTEX_PARTNER_DEMO.SALES`, create a reusable view named **`CUSTOMER_REVENUE`**
-> with one row per customer and these exact columns:
-> `customer_name`, `region`, `total_revenue` (sum of the customer's order amounts),
-> and `order_count` (number of the customer's orders).
-> Create the view in that schema.
+> Our reports keep re-deriving per-customer revenue from the raw `CUSTOMERS` and
+> `ORDERS` tables in `CORTEX_PARTNER_DEMO.SALES`, and the numbers drift. Create one
+> reusable view, **`CUSTOMER_REVENUE`**, that reports each customer's total revenue,
+> how many orders they've placed, and their region — so every report can read from a
+> single source. Include the columns `customer_name`, `region`, `total_revenue`, and
+> `order_count`.
 
 ## How to verify
 After the view exists, run [`verify.sql`](verify.sql) in your worksheet — it compares
